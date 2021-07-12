@@ -1,0 +1,23 @@
+<div class="card-columns">
+    <div class="card" *ngFor="let video of videos">
+        <img [src]="video.thumbnails.high.url" class="card-img-top" alt="...">
+        <div class="card-body">
+            <h5 class="card-title">{{ video.title }}</h5>
+            <p class="card-text">
+                <strong>Autor:</strong> {{ video.channelTitle }}
+            </p>
+            <p class="card-text">
+                <strong>Fecha de Publicación:</strong> {{ video.publishedAt | date:'dd/MM/yyyy' }}
+            </p>
+            <button class="btn btn-success btn-block" (click)="verVideo(video)">Ver Video</button>
+        </div>
+    </div>
+</div>
+<div class="row">
+    <div class="col text-center">
+        <button class="btn btn-warning" (click)="listarVideos()" *ngIf="videos.length < ytServ.items">
+            Ver más
+        </button>
+        <p *ngIf="videos.length >= ytServ.items">Has llegado al final de la búsqueda</p>
+    </div>
+</div>

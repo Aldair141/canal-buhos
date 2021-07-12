@@ -119,6 +119,10 @@
           }
         }
       }
-    }},
-  "defaultProject": "canal-buhito"
+    }
+  },
+  "defaultProject": "canal-buhito",
+  "cli": {
+    "analytics": false
+  }
 }

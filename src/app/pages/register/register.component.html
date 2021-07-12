@@ -1,0 +1,74 @@
+<div class="container register">
+    <div class="row">
+        <div class="col-md-3 register-left">
+            <img src="https://image.ibb.co/n7oTvU/logo_white.png" alt="" />
+            <h3>Bienvenido</h3>
+            <p>Todo el contenido de búhos sólo para ti!</p>
+            <!-- <input type="submit" name="" value="Login" /> -->
+            <button type="button" routerLink="/login">Iniciar Sesión</button>
+            <br/>
+        </div>
+        <div class="col-md-9 register-right">
+            <div class="tab-pane fade show active" id="home" role="tabpanel" aria-labelledby="home-tab">
+                <h3 class="register-heading">Cree su nueva cuenta</h3>
+                <form [formGroup]="formulario" (ngSubmit)="enviarFormulario()">
+                    <div class="row register-form">
+                        <div class="col-md-6">
+                            <div class="form-group">
+                                <input type="text" formControlName="appaterno" class="form-control" placeholder="Apellido Paterno *" value="" />
+                                <p class="text-danger form-text" *ngIf="appaternoVacio">El apellido paterno es obligatorio *</p>
+                                <p class="text-danger form-text" *ngIf="appaterno3letras">Ingrese 3 caracteres como mínimo *</p>
+                                <p class="text-danger form-text" *ngIf="appaternoSoloLetras">Ingrese sólo letras *</p>
+                            </div>
+                            <div class="form-group">
+                                <input type="text" formControlName="nombres" class="form-control" placeholder="Nombres *" value="" />
+                                <p class="text-danger form-text" *ngIf="nombreVacio">El nombre es obligatorio *</p>
+                                <p class="text-danger form-text" *ngIf="nombre3letras">Ingrese 3 caracteres como mínimo *</p>
+                                <p class="text-danger form-text" *ngIf="nombreSoloLetras">Ingrese sólo letras *</p>
+                            </div>
+                            <div class="form-group">
+                                <input type="password" formControlName="password1" class="form-control" placeholder="Clave *" value="" />
+                                <p class="text-danger form-text" *ngIf="claveVacia">La contraseña es obligatoria *</p>
+                                <p class="text-danger form-text" *ngIf="claveSoloAlfanumerico">Sólo se permiten números y letras *</p>
+                            </div>
+                            <div class="form-group">
+                                <input type="password" formControlName="password2" class="form-control" placeholder="Confirmar Clave *" value="" />
+                                <p class="text-danger form-text" *ngIf="clavesDesiguales">Las claves son distintas *</p>
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="form-group">
+                                <input type="text" class="form-control" formControlName="apmaterno" placeholder="Apellido Materno*" value="" />
+                                <p class="text-danger form-text" *ngIf="apmaternoVacio">El apellido materno es obligatorio *</p>
+                                <p class="text-danger form-text" *ngIf="apmaterno3letras">Ingrese 3 caracteres como mínimo *</p>
+                                <p class="text-danger form-text" *ngIf="apmaternoSoloLetras">Ingrese sólo letras *</p>
+                            </div>
+                            <div class="form-group">
+                                <input type="email" class="form-control" formControlName="correo" placeholder="Correo Electrónico *" value="" />
+                                <p class="text-danger form-text" *ngIf="correoVacio">El correo es obligatorio *</p>
+                                <p class="text-danger form-text" *ngIf="correoFormatoInvalido">Ingrese un correo válido *</p>
+                                <p class="text-danger form-text" *ngIf="correoNoDisponible">Este correo ya se encuentra registrado *</p>
+                            </div>
+                            <div class="form-group">
+                                <input type="text" formControlName="telefono" name="txtEmpPhone" autocomplete="off" class="form-control" placeholder="Teléfono Celular *" value="" />
+                                <p class="text-danger form-text" *ngIf="telefonoInvalido">El teléfono es obligatorio *</p>
+                                <p class="text-danger form-text" *ngIf="formatoTelefonoInvalido">Ingrese un teléfono válido *</p>
+                                <p class="text-danger form-text" *ngIf="telefonoNoDisponible">Este teléfono ya se encuentra registrado *</p>
+                            </div>
+                            <div class="form-group">
+                                <select class="form-control" formControlName="genero">
+                                    <option value="">::SELECCIONE::</option>
+                                    <option value="M">Masculino</option>
+                                    <option value="F">Femenino</option>
+                                </select>
+                                <p class="text-danger form-text" *ngIf="generoInvalido">El género es obligatorio *</p>
+                            </div>
+                            <input type="submit" class="btnRegister" value="Crear mi cuenta" />
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+
+</div>

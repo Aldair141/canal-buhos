@@ -1,5 +1,20 @@
 # CanalBuhito
 
+Proyecto inspirado en mi animal favorito.
+
+Este proyecto contiene:
+
+Consumo de API REST.
+Seguridad e inicio de sesión.
+Registro y validación de formularios.
+Formulario reactivo.
+Validación asíncrona de datos mientras se va completando el formulario de registro.
+Validación de caracteres especiales.
+
+##Extra:
+Manejo de repositorio GIT
+
+
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 10.0.4.
 
 ## Development server

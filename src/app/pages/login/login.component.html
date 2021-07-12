@@ -1,0 +1,35 @@
+<div class="body">
+    <div id="login">
+        <h3 class="text-center text-white pt-5">Login form</h3>
+        <div class="container">
+            <div id="login-row" class="row justify-content-center align-items-center">
+                <div id="login-column" class="col-md-6">
+                    <div id="login-box" class="col-md-12">
+                        <form [formGroup]="formLogin" id="login-form" class="form" (ngSubmit)="onSubmit()">
+                            <h3 class="text-center text-info">Iniciar Sesión</h3>
+                            <div class="form-group">
+                                <label for="username" class="text-info" [class.text-danger]="usuarioNoValido || usuarioVacio">Correo o Teléfono:</label><br>
+                                <input type="text" formControlName="usuario" name="username" id="username" autofocus class="form-control" autocomplete="off" [class.is-invalid]="usuarioNoValido || usuarioVacio">
+                                <p class="form-text text-danger" *ngIf="usuarioVacio">Este campo es obligatorio *</p>
+                                <p class="form-text text-danger" *ngIf="usuarioNoValido">Ingrese un correo o teléfono válido *</p>
+                            </div>
+                            <div class="form-group">
+                                <label for="password" class="text-info" [class.text-danger]="claveInvalido">Contraseña:</label><br>
+                                <input type="password" formControlName="clave" name="password" id="password" class="form-control" [class.is-invalid]="claveInvalido" autocomplete="off">
+                                <p class="form-text text-danger" *ngIf="claveInvalido">Este campo es obligatorio *</p>
+                            </div>
+                            <div class="form-group">
+                                <label for="remember-me" class="text-info"><span>Recordar mi cuenta</span>
+                                    &nbsp;<span><input id="remember-me" name="remember-me" type="checkbox" formControlName="rememberme"></span></label><br>
+                                <input type="submit" name="submit" class="btn btn-info btn-md" value="Iniciar Sesión">
+                            </div>
+                            <div id="register-link" class="text-right">
+                                <a href="#" class="text-info" routerLink="/register">No tengo mi cuenta</a>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
